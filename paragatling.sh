@@ -42,7 +42,7 @@ mkdir -p $GATLING_TEMP_DIR
 if [[ $(ls -t $GATLING_REPORT_DIR | wc -l) -gt 10 ]]
 then
    echo "Deleting $(ls -t | tail -n +11)"
-   ls -t | tail -n +11 | xargs -d '\n' rm -rf
+   ls -t $GATLING_REPORT_DIR | tail -n +11 | xargs -d '\n' rm -rf
 fi
 
 # cleaning remote dir
