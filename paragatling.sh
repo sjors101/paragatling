@@ -41,8 +41,8 @@ mkdir -p $GATLING_TEMP_DIR
 # clean-up > 10 simulations 
 if [[ $(ls -t $GATLING_REPORT_DIR | wc -l) -gt 10 ]]
 then
-   echo "Deleting $(ls -t | tail -n +11)"
-   ls -t $GATLING_REPORT_DIR | tail -n +11 | xargs -d '\n' rm -rf
+   cd $GATLING_REPORT_DIR
+   ls -t | tail -n +11 | xargs -d '\n' rm -rf
 fi
 
 # cleaning remote dir
